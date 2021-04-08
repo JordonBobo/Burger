@@ -1,1 +1,60 @@
-<h1>This is the index page</h1>
+
+
+<dev>
+<img src="/img/bobsBurgers01.jpg" alt="image of bob's burgers" class="burgerImg"></img>
+</dev>
+
+<h1>Burgers!</h1>
+
+<form id="makeNewBurger">
+    <div class="form-group">
+        <label for="userInputName">Add a new Burger of the day: </label>
+        <input type='text' name="burgerName" id="userInputName">
+    </div>
+
+    <button type="submit" class="btn btn-primary" id='submitNew'>Submit</button>
+</form>
+
+
+
+
+
+
+
+
+<div> <h3>These burgers are ready to go</h3>
+{{#each x}}
+{{#unless devoured}}
+
+
+{{!-- test {{id}} --}}
+    <div>
+{{!-- <h5 id="display1">Burger ID: {{id}}</h5> --}}
+<h5>- {{burgerName}}</h5>
+{{!-- <h5 id="display3">Devoured? {{devoured}}</h5> --}}
+
+</div>
+      {{/unless}}
+      {{/each}}
+</div>
+
+
+<div> <h3>These burgers are already gone</h3>
+{{#each x}}
+{{#if devoured}}
+
+
+{{!-- test {{id}} --}}
+    <div>
+
+{{!-- <h5 id="display1">Burger ID: {{id}}</h5> --}}
+<h5>- {{burgerName}}</h5>
+{{!-- <h5 id="display3">Devoured? {{devoured}}</h5> --}}
+
+</div>
+      {{/if}}
+      {{/each}}
+</div>
+
+
+

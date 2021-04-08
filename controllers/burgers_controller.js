@@ -1,37 +1,34 @@
 const express = require('express')
-const burger = require('../models/burger')
+const burgerModel = require('../models/burger')
 const router = express.Router();
+const exphbs = require('express-handlebars');
+
+// const path =require('path');
+// const source = path.join(__dirname, '../views/index.handlebars')
+
+
 
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', (req, res) => {
-  cat.all((data) => {
-    const hbsObject = {
-      cats: data,
-    };
-    console.log(hbsObject);
-    res.render('index', hbsObject);
+  burgerModel.all((data) => {
+    res.render('index', {
+      x: data,
+    });
   });
 });
 
-router.post('/api/cats', (req, res) => {
-  cat.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
+router.post('/api/burger', (req, res) => {
+  console.log(req)
+  burgerModel.create(req.body.burgerName, (result) => {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+    res.json({ burgerName: result.burgerName }); 
   });
 });
 
-router.put('/api/cats/:id', (req, res) => {
-  const condition = `id = ${req.params.id}`;
-
-  console.log('condition', condition);
-
-  cat.update(
-    {
-      sleepy: req.body.sleepy,
-    },
-    condition,
-    (result) => {
+router.put('/api/burgers/:id', (req, res) => {
+  const whichOne = `id = ${req.params.id}`;
+  burgerModel.update(whichOne,(result) => {
       if (result.changedRows === 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
@@ -41,10 +38,9 @@ router.put('/api/cats/:id', (req, res) => {
   );
 });
 
-router.delete('/api/cats/:id', (req, res) => {
-  const condition = `id = ${req.params.id}`;
-
-  cat.delete(condition, (result) => {
+router.delete('/api/burger/:id', (req, res) => {
+  const whichOne = `id = ${req.params.id}`;
+  burgerModel.delete(whichOne, (result) => {
     if (result.affectedRows === 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -54,4 +50,4 @@ router.delete('/api/cats/:id', (req, res) => {
 });
 
 // Export routes for server.js to use.
-module.exports = router;
+module.exports = router

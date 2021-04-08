@@ -1,19 +1,12 @@
 
-CREATE DATANSE burgers_db;
-USE burgers_db;
-CREATE TABLE burgers (
-    id INTEGER NON NULL AUTO_INCRIMENT,
-    burger_name VARCHAR,
+-- CREATE DATABASE burgers_db;
+USE g1v3u8db9rtpl41p;
+CREATE TABLE burgers 
+(
+    id INT NOT NULL AUTO_INCREMENT, 
+    burgerName VARCHAR(255) NOT NULL,
     devoured BOOLEAN DEFAULT FALSE,
     primary key (id)
-)
-
-
-
-
-
-
-
-
+);
 
 
