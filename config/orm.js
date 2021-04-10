@@ -55,7 +55,7 @@ const orm = {
     create(burgerName, cb) {
         connection.query("INSERT INTO burgers (burgerName) VALUES (?)", burgerName, (err, result) => {
             if (err) {throw err}
-            console.log(result)
+            // console.log(result)
             cb(result)
 
         }

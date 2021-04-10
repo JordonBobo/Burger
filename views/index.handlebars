@@ -6,13 +6,15 @@
 
 <h1>Burgers!</h1>
 
+{{!-- <form id="makeNewBurger" action="/api/burger" method="POST"> --}}
 <form id="makeNewBurger">
     <div class="form-group">
         <label for="userInputName">Add a new Burger of the day: </label>
         <input type='text' name="burgerName" id="userInputName">
     </div>
 
-    <button type="submit" class="btn btn-primary" id='submitNew'>Submit</button>
+    {{!-- <button type="submit" class="btn btn-primary" id='submitNew'>Submit</button> --}}
+    <button class="btn btn-primary" id='submitNew'>Submit</button>
 </form>
 
 

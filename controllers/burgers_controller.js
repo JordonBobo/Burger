@@ -19,11 +19,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burger', (req, res) => {
-  console.log(req)
-  burgerModel.create(req.body.burgerName, (result) => {
-    // Send back the ID of the new quote
-    res.json({ burgerName: result.burgerName }); 
-  });
+  console.log(req.body.burgerName)
+  // console.log(req)
+  // burgerModel.create(req.body.burgerName, (result) => {
+  //   // Send back the ID of the new quote
+  //   res.json({ burgerName: result.burgerName }); 
+  // });
 });
 
 router.put('/api/burgers/:id', (req, res) => {

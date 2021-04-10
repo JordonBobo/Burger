@@ -5,9 +5,8 @@ const burgerModel = {
     all(cb) {
       orm.all((res) => cb(res));
     },
-    // // The variables cols and vals are arrays.
     create(burgerName, cb) {
-      console.log(burgerName)
+      // console.log(burgerName)
       orm.create(burgerName, cb);
     },
     update(whichOne, cb) {
