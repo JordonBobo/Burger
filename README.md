@@ -1,12 +1,5 @@
 # Burger
 
-
-https://vast-headland-51498.herokuapp.com/
-
-
-
-
-
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Table of Contents
