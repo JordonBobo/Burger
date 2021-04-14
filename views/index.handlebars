@@ -23,40 +23,42 @@
 
 
 
-
-<div> <h3>These burgers are ready to go</h3>
+<h3>Ideas for burgers of the day we can use: </h3>
+<ul>
 {{#each x}}
 {{#unless devoured}}
-
+{{>addButtons devoured=false}}
 
 {{!-- test {{id}} --}}
-    <div>
+    {{!-- <div> --}}
 {{!-- <h5 id="display1">Burger ID: {{id}}</h5> --}}
-<h5>- {{burgerName}}</h5>
+{{!-- <h5>- {{burgerName}}</h5> --}}
 {{!-- <h5 id="display3">Devoured? {{devoured}}</h5> --}}
 
-</div>
+{{!-- </div> --}}
       {{/unless}}
       {{/each}}
-</div>
+</ul>
 
 
-<div> <h3>These burgers are already gone</h3>
+<h3>Already done these ones:</h3>
+<ul>
 {{#each x}}
 {{#if devoured}}
-
+{{>addButtons devoured=true}}
 
 {{!-- test {{id}} --}}
-    <div>
+    {{!-- <div> --}}
 
 {{!-- <h5 id="display1">Burger ID: {{id}}</h5> --}}
-<h5>- {{burgerName}}</h5>
+{{!-- <h5>- {{burgerName}}</h5> --}}
 {{!-- <h5 id="display3">Devoured? {{devoured}}</h5> --}}
 
-</div>
+{{!-- </div> --}}
+{{!-- <div>Number of people that laughed at the burger of the day: 0 </div> --}}
       {{/if}}
       {{/each}}
-</div>
+</ul>
 
 
 

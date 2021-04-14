@@ -57,41 +57,12 @@ const orm = {
             if (err) {throw err}
             // console.log(result)
             cb(result)
-
-        }
-        )
-        // let queryString = `INSERT INTO ${table}`;
-    
-        // queryString += ' (';
-        // queryString += cols.toString();
-        // queryString += ') ';
-        // queryString += 'VALUES (';
-        // queryString += printQuestionMarks(vals.length);
-        // queryString += ') ';
-    
-        // console.log(queryString);
-    
-        // connection.query(queryString, vals, (err, result) => {
-        // if (err) {
-        //     throw err;
-        // }
-    
-        // cb(result);
-        // });
-        // console.log('ORM create')
+        })
     },
 
     // An example of objColVals would be {name: panther, sleepy: true}
     update(whichOne, cb) {
-        // let queryString = `UPDATE ${table}`;
-    
-        // queryString += ' SET ';
-        // queryString += objToSql(objColVals);
-        // queryString += ' WHERE ';
-        // queryString += condition;
-    
-        // console.log(queryString);
-        connection.query("UPDATE burgers SET devoured = true WHERE ID = ?", (whichOne), (err, result) => {
+        connection.query("UPDATE burgers SET devoured = true WHERE id = ?", whichOne, (err, result) => {
         if (err) {
             throw err;
         }
@@ -102,11 +73,7 @@ const orm = {
     },
 
     delete(whichOne, cb) {
-        // let queryString = `DELETE FROM ${table}`;
-        // queryString += ' WHERE ';
-        // queryString += condition;
-    
-        connection.query("DELETE FROM burgers WHERE id = ?", (whichOne),  (err, result) => {
+        connection.query("DELETE FROM burgers WHERE id = ?", whichOne,  (err, result) => {
         if (err) {
             throw err;
         }

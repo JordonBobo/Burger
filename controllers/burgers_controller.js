@@ -20,15 +20,15 @@ router.get('/', (req, res) => {
 
 router.post('/api/burger', (req, res) => {
   console.log(req.body.burgerName)
-  // console.log(req)
-  // burgerModel.create(req.body.burgerName, (result) => {
-  //   // Send back the ID of the new quote
-  //   res.json({ burgerName: result.burgerName }); 
-  // });
+  burgerModel.create(req.body.burgerName, (result) => {
+    // Send back the ID of the new quote
+    // console.log(result)
+    res.json({ id: result.insertId }); 
+  });
 });
 
-router.put('/api/burgers/:id', (req, res) => {
-  const whichOne = `id = ${req.params.id}`;
+router.put('/api/burger/:id', (req, res) => {
+  const whichOne = `${req.params.id}`;
   burgerModel.update(whichOne,(result) => {
       if (result.changedRows === 0) {
         // If no rows were changed, then the ID must not exist, so 404
@@ -40,7 +40,7 @@ router.put('/api/burgers/:id', (req, res) => {
 });
 
 router.delete('/api/burger/:id', (req, res) => {
-  const whichOne = `id = ${req.params.id}`;
+  const whichOne = `${req.params.id}`;
   burgerModel.delete(whichOne, (result) => {
     if (result.affectedRows === 0) {
       // If no rows were changed, then the ID must not exist, so 404
