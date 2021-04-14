@@ -7,9 +7,6 @@ const exphbs = require('express-handlebars');
 // const source = path.join(__dirname, '../views/index.handlebars')
 
 
-
-
-// Create all our routes and set up logic within those routes where required.
 router.get('/', (req, res) => {
   burgerModel.all((data) => {
     res.render('index', {
@@ -21,8 +18,6 @@ router.get('/', (req, res) => {
 router.post('/api/burger', (req, res) => {
   console.log(req.body.burgerName)
   burgerModel.create(req.body.burgerName, (result) => {
-    // Send back the ID of the new quote
-    // console.log(result)
     res.json({ id: result.insertId }); 
   });
 });
@@ -50,5 +45,4 @@ router.delete('/api/burger/:id', (req, res) => {
   });
 });
 
-// Export routes for server.js to use.
 module.exports = router

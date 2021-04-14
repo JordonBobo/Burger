@@ -6,7 +6,6 @@ const burgerModel = {
       orm.all((res) => cb(res));
     },
     create(burgerName, cb) {
-      // console.log(burgerName)
       orm.create(burgerName, cb);
     },
     update(whichOne, cb) {
@@ -17,7 +16,6 @@ const burgerModel = {
     },
   };
   
-  // Export the database functions for the controller (catsController.js).
 module.exports = burgerModel;
 
 
