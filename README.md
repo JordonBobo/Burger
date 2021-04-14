@@ -18,7 +18,7 @@ Deployed location:  [Heroku](https://vast-headland-51498.herokuapp.com/).
 
 GitHub Repo location: [GitHub](https://github.com/JordonBobo/Burger).
 
-![screenshot](./public/images/screenshot1.JPG)
+![screenshot](/public/img/screenshot1.JPG)
 
 ### How to Install
 After forking the repo to your computer, make sure to install the required packages with `npm i` in the terminal. 
