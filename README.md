@@ -9,7 +9,7 @@
 4. [Contribution Guidelines](#contribution-guidelines)
 5. [Test Instructions](#test-instructions)
 6. [License](#license)
-7. [Questions?](#questions?)
+7. [Questions?](#Questions?)
 
 ### Description
 A full stack project which takes in user inputted burger names and adds them to a list of burgers of the day which Bob can use for his restaurant. The names are stored in a MySQL database. Once Bob uses the specific burger, he can then click “use” which moves the burger into the archive list. If Bob decides he doesn’t want to see an item on the archive list any more, there is a delete button which will permanently remove the burger from the database. 

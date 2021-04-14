@@ -6,10 +6,9 @@ const exphbs = require('express-handlebars');
 // const path =require('path');
 // const source = path.join(__dirname, '../views/index.handlebars')
 
-
 router.get('/', (req, res) => {
   burgerModel.all((data) => {
-    res.render('views/index', {
+    res.render('index', {
       x: data,
     });
   });
