@@ -9,7 +9,7 @@ const exphbs = require('express-handlebars');
 
 router.get('/', (req, res) => {
   burgerModel.all((data) => {
-    res.render('index', {
+    res.render('views/index', {
       x: data,
     });
   });
